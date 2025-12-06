@@ -1,0 +1,720 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================= */
+/*  FONT IMPORTS             */
+/* ========================= */
+
+/* ========================= */
+/*  THEME TOKENS             */
+/* ========================= */
+
+@layer base {
+  :root {
+    --background: 60 4% 95%;
+    --foreground: 24 9% 10%;
+
+    --card: 60 9% 97%;
+    --card-foreground: 24 9% 10%;
+
+    --popover: 20 5% 90%;
+    --popover-foreground: 24 9% 10%;
+
+    --primary: 37 92% 50%;
+    --primary-foreground: 47 100% 96%;
+
+    --secondary: 24 5% 44%;
+    --secondary-foreground: 60 9% 97%;
+
+    --muted: 23 5% 82%;
+    --muted-foreground: 24 9% 10%;
+
+    --accent: 47 100% 96%;
+    --accent-foreground: 37 92% 50%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 23 5% 82%;
+    --input: 23 5% 82%;
+    --ring: 37 92% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 24 9% 10%;
+    --sidebar-primary: 37 92% 50%;
+    --sidebar-primary-foreground: 47 100% 96%;
+    --sidebar-accent: 24 5% 44%;
+    --sidebar-accent-foreground: 60 9% 97%;
+    --sidebar-border: 23 5% 82%;
+    --sidebar-ring: 37 92% 50%;
+    --sidebar-muted: 220 9% 60%;
+
+    --chart-1: 45 96% 64%;
+    --chart-2: 47 95% 53%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 37 92% 50%;
+    --chart-5: 24 5% 44%;
+
+    --font-sans: 'Source Sans Pro', ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      'Noto Sans', sans-serif;
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --sidebar: 60 9% 97%;
+    --font-serif: 'Source Serif Pro', ui-serif, Georgia, Cambria,
+      'Times New Roman', Times, serif;
+    --font-mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo,
+      Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 24 9% 10%;
+    --foreground: 60 9% 97%;
+
+    --card: 12 6% 15%;
+    --card-foreground: 60 9% 97%;
+
+    --popover: 30 6% 25%;
+    --popover-foreground: 60 9% 97%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 20 91% 14%;
+
+    --secondary: 24 5% 44%;
+    --secondary-foreground: 60 9% 97%;
+
+    --muted: 24 5% 44%;
+    --muted-foreground: 60 9% 97%;
+
+    --accent: 25 83% 14%;
+    --accent-foreground: 47 95% 53%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 33 5% 32%;
+    --input: 33 5% 32%;
+    --ring: 43 96% 56%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 60 9% 97%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 20 91% 14%;
+    --sidebar-accent: 47 95% 53%;
+    --sidebar-accent-foreground: 25 83% 14%;
+    --sidebar-border: 33 5% 32%;
+    --sidebar-ring: 43 96% 56%;
+    --sidebar-muted: 220 9% 50%;
+
+    --chart-1: 45 96% 64%;
+    --chart-2: 48 96% 76%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 37 92% 50%;
+    --chart-5: 33 5% 32%;
+
+    --sidebar: 12 6% 15%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1),
+      0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ========================= */
+/*  RESPONSIVE UTILITIES     */
+/* ========================= */
+
+@layer utilities {
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-card/80 backdrop-blur-sm;
+  }
+
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  /* ============= LAYOUT SYSTEM ============= */
+  
+  /* Layout root: full page dashboard wrapper */
+  .layout-root {
+    @apply min-h-screen bg-background text-foreground;
+  }
+
+  /* Dashboard shell responsive layout */
+  .layout-shell {
+    @apply flex min-h-screen w-full;
+  }
+
+  /* Sidebar (desktop) */
+  .layout-sidebar {
+    @apply hidden md:flex flex-col w-64 lg:w-72 bg-sidebar shadow-md border-r border-sidebar-border fixed left-0 top-0 h-screen z-40;
+  }
+
+  /* Main content with sidebar offset */
+  .layout-main {
+    @apply flex-1 flex flex-col min-h-screen bg-background w-full md:ml-64 lg:ml-72 transition-all duration-300;
+  }
+
+  /* Top navbar / header */
+  .layout-header {
+    @apply flex items-center justify-between gap-3 px-3 sm:px-4 md:px-6 py-3 md:py-4 border-b border-border bg-card sticky top-0 z-30 shadow-sm;
+  }
+
+  /* Page content wrapper */
+  .layout-content {
+    @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6 lg:py-8;
+  }
+
+  /* Toolbar actions (buttons, filters) */
+  .toolbar-actions {
+    @apply flex flex-wrap gap-2 items-center justify-end;
+  }
+
+  /* Cards */
+  .card-responsive {
+    @apply bg-card rounded-xl md:rounded-2xl shadow-sm p-4 md:p-6 lg:p-8;
+  }
+
+  /* Responsive grid helpers */
+  .grid-auto {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+  }
+
+  .grid-2col {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6;
+  }
+
+  .grid-3col {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6;
+  }
+
+  /* ============= TABLE RESPONSIVE ============= */
+  
+  .table-responsive {
+    @apply w-full overflow-x-auto rounded-lg border border-border;
+  }
+
+  .table-responsive::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    @apply bg-muted/20 rounded-md;
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    @apply bg-muted/60 rounded-md hover:bg-muted/80;
+  }
+
+  /* Table mobile card view */
+  .table-mobile-card {
+    @apply block md:hidden space-y-3;
+  }
+
+  .table-mobile-card-item {
+    @apply bg-card rounded-lg p-4 shadow-sm border border-border space-y-2;
+  }
+
+  /* Standard table view */
+  .table-standard {
+    @apply hidden md:table w-full;
+  }
+
+  /* ============= DIALOG RESPONSIVE ============= */
+  
+  .dialog-responsive {
+    @apply w-[95vw] sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:max-w-2xl max-h-[90vh] overflow-y-auto;
+  }
+
+  .dialog-responsive-sm {
+    @apply w-[95vw] sm:w-[85vw] md:max-w-md;
+  }
+
+  .dialog-responsive-lg {
+    @apply w-[95vw] sm:w-[90vw] md:w-[85vw] lg:max-w-4xl;
+  }
+
+  /* ============= VISIBILITY HELPERS ============= */
+  
+  /* Hide elements on mobile */
+  .hide-mobile {
+    @apply hidden sm:block;
+  }
+
+  .hide-on-tablet {
+    @apply hidden lg:block;
+  }
+
+  /* Show only on specific screens */
+  .only-mobile {
+    @apply block sm:hidden;
+  }
+
+  .only-tablet {
+    @apply hidden sm:block lg:hidden;
+  }
+
+  .only-desktop {
+    @apply hidden lg:block;
+  }
+
+  /* ============= SPACING & CONTAINERS ============= */
+  
+  /* Generic responsive container */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply w-full max-w-4xl mx-auto px-3 sm:px-4 md:px-6;
+  }
+
+  .container-wide {
+    @apply w-full max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12;
+  }
+
+  /* Safe area padding */
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  /* ============= BUTTON RESPONSIVE ============= */
+  
+  .btn-responsive {
+    @apply px-3 py-2 text-sm md:px-4 md:py-2.5 md:text-base;
+  }
+
+  .btn-icon-responsive {
+    @apply p-2 md:p-2.5;
+  }
+
+  /* Stack buttons on mobile */
+  .btn-group-responsive {
+    @apply flex flex-col sm:flex-row gap-2 w-full sm:w-auto;
+  }
+
+  .btn-group-responsive > * {
+    @apply w-full sm:w-auto;
+  }
+
+  /* ============= FORM RESPONSIVE ============= */
+  
+  .form-responsive {
+    @apply space-y-3 md:space-y-4 lg:space-y-5;
+  }
+
+  .form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4;
+  }
+
+  .input-responsive {
+    @apply h-9 md:h-10 text-sm md:text-base;
+  }
+
+  .label-responsive {
+    @apply text-xs md:text-sm font-medium;
+  }
+
+  /* ============= SPACING UTILITIES ============= */
+  
+  .section-spacing {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+
+  .gap-responsive {
+    @apply gap-3 md:gap-4 lg:gap-6;
+  }
+
+  /* ============= STATS CARDS ============= */
+  
+  .stats-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6;
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl p-4 md:p-6 shadow-sm border border-border hover:shadow-md transition-shadow;
+  }
+
+  /* ============= PAGE HEADER ============= */
+  
+  .page-header {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 md:mb-8;
+  }
+
+  .page-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+
+  .page-description {
+    @apply text-sm md:text-base text-muted-foreground mt-1;
+  }
+
+  /* ============= MOBILE OPTIMIZATIONS ============= */
+  
+  /* Touch target sizes (min 44x44px for accessibility) */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Prevent text selection on buttons/interactive elements */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Image responsive */
+  .img-responsive {
+    @apply w-full h-auto object-cover;
+  }
+
+  /* Truncate text with ellipsis */
+  .truncate-mobile {
+    @apply truncate sm:text-clip;
+  }
+}
+
+/* ========================= */
+/*  SIDEBAR (MOBILE DRAWER)  */
+/* ========================= */
+
+@layer utilities {
+  /* Mobile sidebar drawer */
+  .sidebar-mobile {
+    @apply fixed inset-y-0 left-0 z-50 w-64 sm:w-72 bg-sidebar shadow-2xl border-r border-sidebar-border transform transition-transform duration-300 ease-out;
+  }
+
+  .sidebar-closed {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Backdrop behind mobile sidebar */
+  .sidebar-backdrop {
+    @apply fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300;
+  }
+
+  /* Hamburger button */
+  .btn-hamburger {
+    @apply inline-flex items-center justify-center p-2 rounded-lg border border-border bg-card shadow-xs hover:bg-accent transition-colors md:hidden touch-target;
+  }
+}
+
+/* ========================= */
+/*  ANIMATIONS               */
+/* ========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================= */
+/*  RESPONSIVE TYPOGRAPHY    */
+/* ========================= */
+
+/* Mobile (< 640px) */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-2xl leading-tight;
+  }
+
+  h2 {
+    @apply text-xl leading-snug;
+  }
+
+  h3 {
+    @apply text-lg leading-snug;
+  }
+
+  h4 {
+    @apply text-base font-semibold;
+  }
+
+  p, span, li, label {
+    @apply text-sm leading-relaxed;
+  }
+
+  button {
+    @apply text-sm;
+  }
+
+  table th,
+  table td {
+    @apply text-xs px-2 py-2;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  table th,
+  table td {
+    @apply text-sm px-3 py-2.5;
+  }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1025px) {
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  table th,
+  table td {
+    @apply text-sm px-4 py-3;
+  }
+}
+
+/* ========================= */
+/*  PRINT STYLES             */
+/* ========================= */
+
+@media print {
+  .layout-sidebar,
+  .layout-header,
+  .toolbar-actions,
+  .btn-hamburger,
+  button,
+  .sidebar-mobile {
+    display: none !important;
+  }
+
+  .layout-main {
+    margin-left: 0 !important;
+  }
+
+  .layout-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .card-responsive {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* ========================= */
+/*  ACCESSIBILITY            */
+/* ========================= */
+
+/* Focus visible styles */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-ring;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .card-responsive {
+    @apply border-2;
+  }
+
+  button {
+    @apply border-2 border-current;
+  }
+}
+
+/* ========================= */
+/*  CUSTOM SCROLLBAR         */
+/* ========================= */
+
+/* For webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted/60 rounded-md hover:bg-muted/80;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted) / 0.6) hsl(var(--background));
+}
